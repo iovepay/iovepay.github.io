@@ -52,7 +52,7 @@
 <section class="contact">
     <h2>欢迎了解更多</h2>
     <p>我们提供适用于个人站点、电商平台、小微创业者的聚合收款解决方案。</p>
-    <a href="https://t.me/qing_long" target="_blank">通过 Telegram 联系我们✈@qing_long</a>
+    <a href="https://t.me/qing_long" target="_blank" class="btn btn-register" type = "button" onclick = "gtag_report_conversion()" >通过 Telegram 联系我们✈@qing_long</a>
 </section>
 
 <footer>
@@ -69,6 +69,24 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-17781464221');
+</script>
+
+
+    <!-- Event snippet for 出站点击 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17781464221/fGg_CM_jsMwbEJ257p5C',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 
     
